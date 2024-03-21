@@ -4,6 +4,7 @@ import { requestMovieDetails } from "../../services/api";
 import toast from "react-hot-toast";
 import Loader from "../Loader/Loader";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
+import MovieReviewsList from "../MovieReviewsList/MovieReviewsList";
 
 const MovieReviews = () => {
   const { movieId } = useParams();
@@ -12,6 +13,7 @@ const MovieReviews = () => {
   const [error, setError] = useState(false);
 
   useEffect(() => {
+    if (!movieId) return;
     setError(false);
     setIsLoading(true);
     const fetchData = async () => {
@@ -41,6 +43,9 @@ const MovieReviews = () => {
     <div>
       {isLoading && <Loader />}
       {error && <ErrorMessage />}
+      {reviews !== null && Array.isArray(reviews) && (
+        <MovieReviewsList reviews={reviews} />
+      )}
     </div>
   );
 };

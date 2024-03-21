@@ -1,10 +1,10 @@
 import axios from "axios";
 
-const options = (url) => {
+const options = (url, query) => {
   return {
     method: "GET",
     url: `https://api.themoviedb.org/${url}`,
-    params: { language: "en-US" },
+    params: { query: `${query}`, include_adult: "false", language: "en-US" },
     headers: {
       accept: "application/json",
       Authorization:
@@ -13,8 +13,8 @@ const options = (url) => {
   };
 };
 
-export const requestTrendMovies = async () => {
-  const data = await axios.request(options("3/trending/movie/day"));
+export const requestTrendMovies = async (url, query) => {
+  const data = await axios.request(options(url, query));
 
   return data;
 };

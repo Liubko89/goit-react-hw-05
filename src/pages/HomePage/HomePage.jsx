@@ -14,7 +14,7 @@ const HomePage = () => {
     setIsLoading(true);
     const fetchData = async () => {
       try {
-        const { data } = await requestTrendMovies();
+        const { data } = await requestTrendMovies("3/trending/movie/day");
         setMovies(data.results);
       } catch (error) {
         setError(true);

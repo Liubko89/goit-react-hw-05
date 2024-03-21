@@ -14,6 +14,7 @@ const MovieCast = () => {
   const [error, setError] = useState(false);
 
   useEffect(() => {
+    if (!movieId) return;
     setError(false);
     setIsLoading(true);
     const fetchData = async () => {
@@ -41,7 +42,7 @@ const MovieCast = () => {
     <div>
       {isLoading && <Loader />}
       {error && <ErrorMessage />}
-      {cast !== null && <MovieCastList cast={cast} />}
+      {cast !== null && Array.isArray(cast) && <MovieCastList cast={cast} />}
     </div>
   );
 };

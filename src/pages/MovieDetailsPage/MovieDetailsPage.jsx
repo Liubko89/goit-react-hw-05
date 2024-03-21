@@ -14,6 +14,7 @@ const MovieDetailsPage = () => {
   const [imageUrl, setImageUrl] = useState(null);
 
   useEffect(() => {
+    if (!movieId) return;
     setError(false);
     setIsLoading(true);
     const fetchData = async () => {

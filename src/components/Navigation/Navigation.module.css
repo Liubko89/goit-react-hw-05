@@ -1,0 +1,23 @@
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.link {
+  font-family: sans-serif;
+  font-size: 28px;
+  text-decoration: none;
+  color: #212121;
+  border: 1px solid rgb(2, 55, 226);
+  padding: 4px 16px;
+  min-width: 120px;
+  text-align: center;
+}
+
+.active {
+  color: rgb(1, 56, 237);
+  font-weight: 500;
+  background-color: #000000;
+  text-decoration: underline;
+}

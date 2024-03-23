@@ -1,18 +1,33 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
+import { Suspense, lazy } from "react";
+import Loader from "../Loader/Loader";
+import css from "./AdditionalInformation.module.css";
+
+const MovieCast = lazy(() => import("../MovieCast/MovieCast"));
+const MovieReviews = lazy(() => import("../MovieReviews/MovieReviews"));
 
 const AdditionalInformation = () => {
   return (
     <div>
-      <h2>Additional Information</h2>
-      <ul>
+      <h2 className={css.title}>Additional Information</h2>
+      <ul className={css.list}>
         <li>
-          <Link to="cast">Cast</Link>
+          <Link className={css.link} to="cast">
+            Cast
+          </Link>
         </li>
         <li>
-          <Link to="reviews">Reviews</Link>
+          <Link className={css.link} to="reviews">
+            Reviews
+          </Link>
         </li>
       </ul>
-      <Outlet />
+      <Suspense fallback={<Loader />}>
+        <Routes>
+          <Route path="cast" element={<MovieCast />} />
+          <Route path="reviews" element={<MovieReviews />} />
+        </Routes>
+      </Suspense>
     </div>
   );
 };

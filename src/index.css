@@ -27,4 +27,8 @@ img {
 #root {
   margin: 0 auto;
   padding: 40px;
+  background-color: rgb(240, 244, 252);
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
 }

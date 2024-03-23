@@ -5,21 +5,37 @@ import { requestTrendMovies } from "../../services/api";
 import MovieList from "../../components/MovieList/MovieList";
 import Loader from "../../components/Loader/Loader";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
+import { useSearchParams } from "react-router-dom";
 
 const MoviesPage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
-  const [query, setQuery] = useState("");
   const [movies, setMovies] = useState(null);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const query = searchParams.get("query");
 
   const onSubmit = (value) => {
+    if (value === query) {
+      toast(`You have already got the result by request "${value}"`, {
+        style: {
+          border: "1px solid #713200",
+          padding: "16px",
+          color: "#713200",
+        },
+        iconTheme: {
+          primary: "#713200",
+          secondary: "#FFFAEE",
+        },
+      });
+      return;
+    }
     setMovies(null);
     setError(false);
-    setQuery(value);
+    setSearchParams({ query: value });
   };
 
   useEffect(() => {
-    if (query === "") return;
+    if (query === "" || query === null) return;
 
     setIsLoading(true);
     const fetchData = async () => {

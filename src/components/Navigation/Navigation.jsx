@@ -6,14 +6,14 @@ const bildLinkClass = ({ isActive }) => clsx(css.link, isActive && css.active);
 
 const Navigation = () => {
   return (
-    <div className={css.navigation}>
+    <>
       <NavLink to="/" className={bildLinkClass}>
         Home
       </NavLink>
       <NavLink to="/movies" className={bildLinkClass}>
         Movies
       </NavLink>
-    </div>
+    </>
   );
 };
 

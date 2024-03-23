@@ -1,6 +1,6 @@
 import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
-// import css from "./SearchForm.module.css";
+import css from "./SearchForm.module.css";
 
 const SearchForm = ({ onSubmit }) => {
   const [query, setQuery] = useState("");
@@ -32,8 +32,9 @@ const SearchForm = ({ onSubmit }) => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form className={css.form} onSubmit={handleSubmit}>
         <input
+          className={css.input}
           type="text"
           autoComplete="off"
           autoFocus
@@ -42,7 +43,9 @@ const SearchForm = ({ onSubmit }) => {
           onChange={handleChange}
           value={query}
         />
-        <button type="submit">Search</button>
+        <button className={css.button} type="submit">
+          Search
+        </button>
         <Toaster position="top-center" reverseOrder={false} />
       </form>
     </div>

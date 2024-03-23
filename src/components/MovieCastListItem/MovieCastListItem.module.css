@@ -1,0 +1,9 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.img {
+  width: 100%;
+}

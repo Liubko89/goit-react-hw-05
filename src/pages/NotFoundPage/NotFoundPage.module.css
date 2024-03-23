@@ -1,0 +1,30 @@
+.backLink {
+  width: 120px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: rgb(244, 246, 251);
+  font-weight: 500;
+  background-color: #004dff;
+  font-size: 1.6rem;
+  padding: 4px 8px;
+  margin-bottom: 16px;
+}
+
+.backLink:active,
+.backLink:hover {
+  scale: 1.1;
+}
+
+.text {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 24px;
+}
+
+.span {
+  text-align: center;
+  font-size: 4rem;
+}

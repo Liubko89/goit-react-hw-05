@@ -1,0 +1,8 @@
+.list {
+  max-width: 1440px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  justify-content: stretch;
+  grid-gap: 32px;
+}

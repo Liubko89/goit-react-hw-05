@@ -44,7 +44,7 @@ const MovieDetailsPage = () => {
 
   return (
     <div>
-      <Link className={css.backLink} to={backLinkRef.current}>
+      <Link className="link" to={backLinkRef.current}>
         Go back
       </Link>
       {error && <ErrorMessage />}
@@ -62,14 +62,26 @@ const MovieDetailsPage = () => {
             </div>
 
             <div className={css.contentWrap}>
-              <h1>{movie.title}</h1>
-              <p>User score: {Math.round(movie.vote_average * 10)}%</p>
-              <h2>Overview</h2>
-              <p>{movie.overview}</p>
-              <h2>Genres</h2>
-              <p>
-                {movie.genres.map((el) => (
-                  <span key={el.id}>{el.name} </span>
+              <h1 className={css.title}>{movie.title}</h1>
+
+              <p className={css.description}>Released: {movie.release_date}</p>
+
+              <p className={css.description}>
+                User score: {Math.round(movie.vote_average * 10)}%
+              </p>
+
+              <h2 className={css.descriptionTitle}>Overview</h2>
+              <p className={css.description}>{movie.overview}</p>
+
+              <h2 className={css.descriptionTitle}>Genres</h2>
+              <p className={css.description}>
+                {movie.genres.map((el, i) => (
+                  <span key={el.id}>
+                    {el.name}
+                    {movie.genres.length > 0 &&
+                      i !== movie.genres.length - 1 &&
+                      ", "}
+                  </span>
                 ))}
               </p>
             </div>

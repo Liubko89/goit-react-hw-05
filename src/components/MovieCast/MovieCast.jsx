@@ -3,7 +3,7 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import Loader from "../Loader/Loader";
 import { useParams } from "react-router-dom";
-import { requestMovieDetails } from "../../services/api";
+import { requestMovieCast } from "../../services/api";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import MovieCastList from "../MovieCastList/MovieCastList";
 
@@ -19,7 +19,7 @@ const MovieCast = () => {
     setIsLoading(true);
     const fetchData = async () => {
       try {
-        const { data } = await requestMovieDetails(movieId, "/credits");
+        const { data } = await requestMovieCast(movieId);
         setCast(data.cast);
       } catch (error) {
         setError(true);

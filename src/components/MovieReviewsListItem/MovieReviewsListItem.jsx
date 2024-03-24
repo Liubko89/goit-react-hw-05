@@ -1,7 +1,10 @@
+import css from "./MovieReviewsListItem.module.css";
+
 const MovieReviewsListItem = ({ author, content }) => {
   return (
     <div>
-      <h3>Author: {author}</h3> <p>{content}</p>
+      <h3 className={css.title}>Author: {author}</h3>{" "}
+      <p className={css.descr}>{content}</p>
     </div>
   );
 };

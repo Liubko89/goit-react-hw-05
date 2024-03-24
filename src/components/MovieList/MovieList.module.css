@@ -1,26 +1,47 @@
+.heading {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 6px var(--primary);
+}
+
 .list {
   max-width: 1440px;
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  justify-content: stretch;
-  grid-gap: 32px;
 }
 
 .listItem {
   max-width: 300px;
+  margin: 0 auto 16px;
   width: 100%;
   padding-bottom: 12px;
-  border-bottom: 1px solid #004dff;
-  background-color: rgb(239, 240, 244);
+  border-bottom: 1px solid var(--primary);
+  background-color: var(--bgLight);
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  transition: scale, 250ms ease-in-out;
+}
+
+.listItem:hover {
+  scale: 1.05;
+  box-shadow: 0 19px 38px rgba(0, 77, 255, 0.3),
+    0 15px 12px rgba(0, 77, 255, 0.22);
+}
+
+@media screen and (min-width: 768px) {
+  .list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-content: stretch;
+    grid-gap: 32px;
+  }
 }
 
 .link {
   text-decoration: none;
-  color: rgb(40, 38, 38);
+  color: var(--bg);
   font-size: 1rem;
   display: flex;
   flex-direction: column;
@@ -43,8 +64,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
-  background-color: rgb(40, 38, 38);
+  color: var(--white);
+  background-color: var(--bg);
 }
 
 .descrContiner {

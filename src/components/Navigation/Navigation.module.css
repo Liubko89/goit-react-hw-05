@@ -1,23 +1,42 @@
 .link {
-  font-family: sans-serif;
-  font-size: 28px;
-  text-decoration: none;
-  color: #2d2c2c;
-  border: 1px solid #004dff;
-  padding: 4px 16px;
-  min-width: 120px;
-  text-align: center;
+  width: 160px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(90deg, var(--black) 33%, #fff5, var(--black) 67%)
+      var(--_p, 100%) / 300% no-repeat,
+    var(--primary);
+  color: var(--black);
+  border: none;
+  transform: perspective(500px) rotateY(calc(20deg * var(--_i, -1)));
+  text-shadow: calc(var(--_i, -1) * 0.08em) -0.01em 0 var(--white),
+    calc(var(--_i, -1) * -0.08em) 0.01em 2px #0004;
+  outline-offset: 0.1em;
+  transition: 0.3s;
 }
 
 .link:hover,
-.link:focus {
-  scale: 1.1;
+.link:focus-visible {
+  --_p: 0%;
+  --_i: 1;
+}
+
+.link:active {
+  text-shadow: none;
+  color: var(--white);
+  box-shadow: inset 0 0 9e9Q #0005;
+  transition: 0s;
+}
+
+.link {
+  font-weight: bold;
+  font-size: 2rem;
+  margin: 0;
+  cursor: pointer;
+  padding: 0.1em 0.3em;
 }
 
 .active {
-  color: rgb(244, 246, 251);
-  font-weight: 500;
-  background-color: #004dff;
-  text-decoration: underline;
-  scale: 1.1;
+  border: 1px solid #0005;
+  background-color: var(--primarySecondary);
 }

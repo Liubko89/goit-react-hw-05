@@ -13,13 +13,29 @@ const options = (url, query) => {
   };
 };
 
-export const requestTrendMovies = async (url, query) => {
-  const data = await axios.request(options(url, query));
+export const requestMovies = async (query) => {
+  const data = await axios.request(options(`3/search/multi`, query));
 
   return data;
 };
 
-export const requestMovieDetails = async (id, adInfo) => {
-  const data = await axios.request(options(`3/movie/${id}${adInfo}`));
+export const requestTrendMovies = async (query) => {
+  const data = await axios.request(options("3/trending/movie/day", query));
+
+  return data;
+};
+
+export const requestMovieDetails = async (id) => {
+  const data = await axios.request(options(`3/movie/${id}`));
+  return data;
+};
+
+export const requestMovieCast = async (id) => {
+  const data = await axios.request(options(`3/movie/${id}/credits`));
+  return data;
+};
+
+export const requestMovieReviews = async (id) => {
+  const data = await axios.request(options(`3/movie/${id}/reviews`));
   return data;
 };

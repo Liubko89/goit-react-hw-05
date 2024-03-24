@@ -1,0 +1,17 @@
+.title {
+  font-size: 2rem;
+  text-shadow: 2px 2px 6px var(--primary);
+}
+
+.descr {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.title::first-letter {
+  margin-left: 3rem;
+}
+
+.descr::first-letter {
+  margin-left: 1rem;
+}

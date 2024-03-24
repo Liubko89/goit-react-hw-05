@@ -5,9 +5,9 @@
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  color: rgb(244, 246, 251);
+  color: var(--bgLight);
   font-weight: 500;
-  background-color: #004dff;
+  background-color: var(--primary);
   font-size: 1.6rem;
   padding: 4px 8px;
   margin-bottom: 16px;

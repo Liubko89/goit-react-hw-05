@@ -8,16 +8,15 @@ const MovieReviews = lazy(() => import("../MovieReviews/MovieReviews"));
 
 const AdditionalInformation = () => {
   return (
-    <div>
-      <h2 className={css.title}>Additional Information</h2>
+    <div className={css.container}>
       <ul className={css.list}>
         <li>
-          <Link className={css.link} to="cast">
+          <Link className="link" to="cast">
             Cast
           </Link>
         </li>
         <li>
-          <Link className={css.link} to="reviews">
+          <Link className="link" to="reviews">
             Reviews
           </Link>
         </li>

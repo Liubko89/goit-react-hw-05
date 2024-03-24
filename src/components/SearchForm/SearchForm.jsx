@@ -14,9 +14,9 @@ const SearchForm = ({ onSubmit }) => {
     if (query.trim() === "") {
       toast("Please fill in the search field.", {
         style: {
-          border: "1px solid #713200",
+          border: "1px solid #000",
           padding: "16px",
-          color: "#713200",
+          color: "#000",
         },
         iconTheme: {
           primary: "#713200",

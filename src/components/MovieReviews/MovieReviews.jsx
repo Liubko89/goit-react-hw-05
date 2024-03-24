@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { requestMovieDetails } from "../../services/api";
+import { requestMovieReviews } from "../../services/api";
 import toast from "react-hot-toast";
 import Loader from "../Loader/Loader";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
@@ -20,14 +20,13 @@ const MovieReviews = () => {
       try {
         const {
           data: { results },
-        } = await requestMovieDetails(movieId, "/reviews");
+        } = await requestMovieReviews(movieId);
         setReviews(results);
       } catch (error) {
         setError(true);
         toast.error("Oops, something went wrong, please try again later", {
           style: {
-            borderRadius: "10px",
-            background: "#333",
+            background: "#000",
             color: "#fff",
           },
         });

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import SearchForm from "../../components/SearchForm/SearchForm";
 import toast from "react-hot-toast";
-import { requestTrendMovies } from "../../services/api";
+import { requestMovies } from "../../services/api";
 import MovieList from "../../components/MovieList/MovieList";
 import Loader from "../../components/Loader/Loader";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
@@ -42,7 +42,7 @@ const MoviesPage = () => {
       try {
         const {
           data: { results },
-        } = await requestTrendMovies(`3/search/multi`, query);
+        } = await requestMovies(query);
         if (results.length === 0) {
           toast("Sorry! There is nothing found", {
             style: {

@@ -1,5 +1,16 @@
+:root {
+  --white: #fff;
+  --primary: #004dff;
+  --primarySecondary: #034bf2;
+  --black: #0000;
+  --bg: #282626;
+  --bgLight: #eff0f4;
+}
+
 body {
   font-family: sans-serif;
+  background-color: var(--bg);
+  color: var(--white);
 }
 
 h1,
@@ -24,11 +35,82 @@ img {
   max-width: 100%;
 }
 
+a {
+  text-decoration: none;
+}
+
 #root {
   margin: 0 auto;
-  padding: 40px;
-  background-color: rgb(240, 244, 252);
+  padding: 4px;
+
   max-width: 1440px;
   width: 100%;
   margin: 0 auto;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.7),
+      rgba(43, 43, 48, 0.3)
+    ),
+    url("../src//img/pexels.jpg");
+  background-repeat: repeat-y;
+  background-size: cover;
+  border-left: 1px solid var(--primary);
+  border-right: 1px solid var(--primary);
+  min-height: 100vh;
+}
+
+@media screen and (min-width: 768px) {
+  #root {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  #root {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+.link {
+  width: 160px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+        90deg,
+        var(--black) 33%,
+        #ffffff55,
+        var(--black) 67%
+      )
+      var(--_p, 100%) / 300% no-repeat,
+    var(--primary);
+  color: var(--black);
+  border: none;
+  transform: perspective(500px) rotateY(calc(20deg * var(--_i, -1)));
+  text-shadow: calc(var(--_i, -1) * 0.08em) -0.01em 0 var(--white),
+    calc(var(--_i, -1) * -0.08em) 0.01em 2px var(--black);
+  outline-offset: 0.1em;
+  transition: 0.3s;
+}
+
+.link:hover,
+.link:focus-visible {
+  --_p: 0%;
+  --_i: 1;
+}
+
+.link:active {
+  text-shadow: none;
+  color: var(--c);
+  box-shadow: inset 0 0 9e9Q var(--black);
+  transition: 0s;
+}
+
+.link {
+  font-weight: bold;
+  font-size: 2rem;
+  margin: 0;
+  cursor: pointer;
+  padding: 0.1em 0.3em;
 }

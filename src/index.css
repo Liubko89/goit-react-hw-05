@@ -125,8 +125,3 @@ button:hover,
     transition: 0s;
   }
 }
-
-button {
-  height: 44px;
-  font-size: 32px;
-}

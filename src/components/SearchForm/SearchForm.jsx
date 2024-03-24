@@ -43,7 +43,9 @@ const SearchForm = ({ onSubmit }) => {
           onChange={handleChange}
           value={query}
         />
-        <button type="submit">Search</button>
+        <button className={css.button} type="submit">
+          Search
+        </button>
         <Toaster position="top-center" reverseOrder={false} />
       </form>
     </div>

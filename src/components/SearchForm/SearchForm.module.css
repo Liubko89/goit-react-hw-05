@@ -29,3 +29,8 @@
 .input:focus {
   scale: 1.02;
 }
+
+.button {
+  height: 44px;
+  font-size: 32px;
+}

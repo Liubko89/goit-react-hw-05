@@ -87,6 +87,7 @@ button,
   margin: 0;
   cursor: pointer;
   padding: 0.1em 0.3em;
+  height: auto;
 }
 
 button:focus,

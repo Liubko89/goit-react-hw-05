@@ -76,3 +76,8 @@
 .title {
   margin-bottom: 8px;
 }
+
+.nothingFound {
+  font-size: 2rem;
+  text-align: center;
+}

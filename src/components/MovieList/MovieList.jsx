@@ -8,12 +8,6 @@ const MovieList = ({ moviesList }) => {
 
   return (
     <div>
-      {!moviesList && (
-        <p className={css.nothingFound}>
-          Unfortunately, there is a problem with the connection to the server,
-          please try again later
-        </p>
-      )}
       {location.pathname === "/" && moviesList && (
         <h1 className={css.heading}>Underrated films you should not miss</h1>
       )}

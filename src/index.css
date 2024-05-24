@@ -51,8 +51,10 @@ a {
       rgba(43, 43, 48, 0.3)
     ),
     url("../src//img/pexels.jpg");
-  background-repeat: repeat-y;
+  background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   border-left: 1px solid var(--primary);
   border-right: 1px solid var(--primary);
   min-height: 100vh;
